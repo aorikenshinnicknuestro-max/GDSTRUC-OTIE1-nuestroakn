@@ -1,22 +1,19 @@
-void main() {
-    PlayerLinkedList playerList = new PlayerLinkedList();
-    playerList.addonFront(new Player(1, "Goku", 500));
-    playerList.addonFront(new Player(2, "Saitama", 999));
-    playerList.addonFront(new Player(3, "Sakamoto", 10));
+public class Main {
+    public static void main(String[] args){
+        PlayerLinkedList playerList = new PlayerLinkedList();
 
-    playerList.printList();
+        playerList.add(new Player(1, "Goku", 500));
+        playerList.add(new Player(2, "Saitama", 999));
+        playerList.add(new Player(3, "Sakamoto", 10));
 
-    IO.println();
-    IO.println("Size: " + playerList.Size());
-    IO.println("Contains: " + playerList.contains(new Player(3, "Sakamoto", 10)));
-    IO.println("Index : " + playerList.indexOf(new Player(3, "Sakamoto", 10)));
+        System.out.println("Original List:");
+        playerList.printList();
 
-    playerList.removeFirst();
+        System.out.println("\n--- Removing First Element ---");
+        Player removed = playerList.removeFirst();
+        System.out.println();
 
-    IO.println();
-    IO.println("After removing first:");
-    playerList.print();
-
-    IO.println();
-    IO.println("Size: " + playerList.Size());
+        System.out.println("\nList after removal; ");
+        playerList.printList();
+    }
 }
